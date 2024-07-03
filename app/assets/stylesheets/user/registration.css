@@ -1,0 +1,4 @@
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
