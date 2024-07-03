@@ -1,0 +1,2 @@
+class PhysicalInformation < ApplicationRecord
+end
