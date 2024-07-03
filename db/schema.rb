@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_03_031548) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_03_114600) do
+  create_table "physical_informations", charset: "utf8", force: :cascade do |t|
+    t.integer "age", null: false
+    t.integer "sex_id", null: false
+    t.integer "height", null: false
+    t.integer "weight", null: false
+    t.integer "active_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_physical_informations_on_user_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "username", null: false
     t.string "name", null: false
@@ -27,4 +39,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_03_031548) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "physical_informations", "users"
 end
