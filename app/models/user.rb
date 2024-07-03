@@ -8,4 +8,5 @@ class User < ApplicationRecord
     validates :username
     validates :birthday
   end
+  has_one :physical_information
 end
