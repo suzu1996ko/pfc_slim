@@ -7,4 +7,8 @@ class PhysicalInformation < ApplicationRecord
     validates :weight
     validates :active_id
   end
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :sex
+  belongs_to :active
 end
