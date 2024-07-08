@@ -1,0 +1,40 @@
+<h2>マクロ計算をします</h2>
+
+<%= form_for @physical_information do |f| %>
+  <%= render "devise/shared/error_messages", resource: @physical_information %>
+
+  <div class="field">
+    <div>
+      性別
+    </div>
+    <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :height, "身長" %><br />
+    <%= f.text_field :height %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight, "体重" %><br />
+    <%= f.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age, "年齢" %><br />
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="field">
+      <div>
+       日常生活のアクティブ度 
+      </div>
+      <%= f.collection_select(:active_id, Active.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
